@@ -51,7 +51,7 @@
     <div class="row">
         <div class="col-md-3 hidden-xs">
             <div class="sidebar well">
-欢迎来到朱玉华的博客!
+持之以恒，有始有终！
 </div>
 
 <div class="sidebar well">
@@ -95,7 +95,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>朱玉华博客</title>
-		<description>欢迎来到朱玉华的博客!</description>
+		<description>持之以恒，有始有终！</description>
 		<link>http://scotte.github.io</link>
 		<atom:link href="http://scotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
