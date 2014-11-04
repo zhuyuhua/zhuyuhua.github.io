@@ -2,7 +2,7 @@
 layout: post
 title: "PostgreSQL入门指导"
 date: 2014-11-03 21:00:00
-comments: true
+comments: false
 ---
 
 ### 1、安装

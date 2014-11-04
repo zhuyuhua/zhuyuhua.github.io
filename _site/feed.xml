@@ -36,10 +36,11 @@
                     <li class="active"><a href="/about.html">关于我</a></li>
                     
                     <li class="active"><a href="/feed.xml">RSS</a></li>
-                    -->
+                   
                     
                       <li class="active"><a href="https://github.com/zhuyuhua/zhuyuhua.github.io" target="_blank">Github</a></li>
                     
+                     -->
                 </ul>
               </div>
         </div>
@@ -51,7 +52,7 @@
     <div class="row">
         <div class="col-md-3 hidden-xs">
             <div class="sidebar well">
-持之以恒，有始有终！
+持之以恒！
 </div>
 
 <div class="sidebar well">
@@ -83,8 +84,8 @@
 	<a href="https://github.com/zhuyuhua/zhuyuhua.github.io">这里</a>找到博客的所有内容。</p>
 <p>联系方式：</p>
 <ul>
-	<li><a href="http://weibo.com/534526520">我的微博</a></li>
-	<li><a href="https://github.com/zhuyuhua/">github</a></li>
+	<li><a href="http://weibo.com/534526520" target="_blank">我的微博</a></li>
+	<li><a href="https://github.com/zhuyuhua/" target="_blank">github</a></li>
 </ul>
 
 </div>
@@ -95,7 +96,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>朱玉华博客</title>
-		<description>持之以恒，有始有终！</description>
+		<description>持之以恒！</description>
 		<link>http://scotte.github.io</link>
 		<atom:link href="http://scotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
@@ -148,13 +149,13 @@
 
 &lt;p&gt;在postgresql里没有区分用户和角色的概念。&amp;quot;create user&amp;quot;和&amp;quot;create role&amp;quot;几乎完全相同，唯一的区别是：&amp;quot;create user&amp;quot;命令创建的用户默认带有login属性；而&amp;quot;create role&amp;quot;命令创建的用户默认不带login属性。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/2014-11-03-role_user.png&quot; alt=&quot;create user/role&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2014-11-03-role_user.png&quot; alt=&quot;create user/role&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;5、常用命令&quot;&gt;5、常用命令&lt;/h3&gt;
 
 &lt;h4 id=&quot;5.1-shell命令&quot;&gt;5.1 shell命令&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/2014-11-03-postgres_shell.png&quot; alt=&quot;postgres shell&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2014-11-03-postgres_shell.png&quot; alt=&quot;postgres shell&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;用户命令&lt;/p&gt;
 
@@ -180,7 +181,7 @@
 
 &lt;h4 id=&quot;5.2-postgresql-控制台命令&quot;&gt;5.2 postgresql 控制台命令&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/2014-11-03-postgres_console.png&quot; alt=&quot;postgres console&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2014-11-03-postgres_console.png&quot; alt=&quot;postgres console&quot;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;help：查看帮助。&lt;/li&gt;

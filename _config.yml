@@ -1,7 +1,7 @@
 # Jekyll configuration
 
-name: 朱玉华博客
-description: 持之以恒，生命不息，写作不止！
+name: 朱玉华的技术博客
+description: 欢迎来到我的技术博客！
 
 # url is currently only used only for the RSS feed in feed.xml
 url: http://scotte.github.io
