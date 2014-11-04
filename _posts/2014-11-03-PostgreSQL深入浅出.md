@@ -44,12 +44,12 @@ psql: FATAL:  database "test_user" does not exist
 ### 4、用户和角色关系
 在postgresql里没有区分用户和角色的概念。"create user"和"create role"几乎完全相同，唯一的区别是："create user"命令创建的用户默认带有login属性；而"create role"命令创建的用户默认不带login属性。
 
-![create user/role](../images/2014-11-03-role_user.png)
+![create user/role]({{ site.baseurl }}/images/2014-11-03-role_user.png)
 
 ### 5、常用命令
 
 #### 5.1 shell命令
-![postgres shell](../images/2014-11-03-postgres_shell.png)
+![postgres shell]({{ site.baseurl }}/images/2014-11-03-postgres_shell.png)
 
 用户命令
 
@@ -70,7 +70,7 @@ psql: FATAL:  database "test_user" does not exist
 - pg_config：打印当前PostgreSQL配置信息。
 
 #### 5.2 postgresql 控制台命令
-![postgres console](../images/2014-11-03-postgres_console.png)
+![postgres console]({{ site.baseurl }}/images/2014-11-03-postgres_console.png)
 
 - help：查看帮助。
 - \copyright：查看版本许可。
