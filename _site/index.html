@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>朱玉华博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">朱玉华博客</a>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">主页</a></li>
+                    <li class="active"><a href="/archive.html">文档列表</a></li>
+                    <!--
+                    <li class="active visible-xs-block"><a href="/links.html">链接</a></li>
+                    
+                    
+                    <li class="active"><a href="/about.html">关于我</a></li>
+                    
+                    <li class="active"><a href="/feed.xml">RSS</a></li>
+                    -->
+                    
+                      <li class="active"><a href="https://github.com/zhuyuhua/zhuyuhua.github.io" target="_blank">Github</a></li>
+                    
+                </ul>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container container-left">
+    <div class="row">
+        <div class="col-md-3 hidden-xs">
+            <div class="sidebar well">
+欢迎来到朱玉华的博客!
+</div>
+
+<div class="sidebar well">
+    <h1>最近更新</h1>
+    <ul>
+        
+          <li><a href="/2014/11/PostgreSQL%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA">PostgreSQL入门指导</a></li>
+        
+          <li><a href="/2014/11/%E6%88%91%E7%9A%84mac%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89">我的mac之路（一）</a></li>
+        
+    </ul>
+</div>
+
+<div class="sidebar well">
+<h1>链接</h1>
+<ul>
+  <li><a href="https://github.com" target="_blank">GitHub</a></li>
+  <li><a href="https://stackoverflow.com" target="_blank">StackOverFlow</a></li>
+  <li><a href="http://www.codeguru.com" target="_blank">CodeGuru</a></li>
+  <li><a href="http://www.codeproject.com" target="_blank">CodeProject</a></li>
+</ul>
+
+</div>
+
+<div class="sidebar well">
+
+<h1>关于我</h1>
+<p>这是朱玉华的个人博客<br/>您可以从
+	<a href="https://github.com/zhuyuhua/zhuyuhua.github.io">这里</a>找到博客的所有内容。</p>
+<p>联系方式：</p>
+<ul>
+	<li><a href="http://weibo.com/534526520">我的微博</a></li>
+	<li><a href="https://github.com/zhuyuhua/">github</a></li>
+</ul>
+
+</div>
+
+        </div>
+        <div class="col-md-9">
+            
+<div class="article">
+    <div class="well">
+        <h1><a href="/2014/11/PostgreSQL%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA">2014.11.04 - PostgreSQL入门指导</a></h1>
+        
+        <div class="content">
+            <h3 id="1、安装">1、安装</h3>
+
+<p>针对mac，<a href="http://www.postgresql.org/download/macosx/">官网</a>提供了4种方法：</p>
+
+<ol>
+<li>Graphical install:即下载<a href="http://www.enterprisedb.com/products-services-training/pgdownload">zip包</a>，里面是postgresql-xxx(版本)-3-osx.app。</li>
+<li>Postgres.app：<a href="http://postgresapp.com">下载地址</a>。步骤和第一步类似。</li>
+<li>使用Fink安装（没试过）</li>
+<li>使用MacPort安装（没试过）</li>
+<li>使用Homebrew安装：&gt;&gt;brew install postgresql。</li>
+</ol>
+
+<p>安装完成后，postgresql会默认生成一个名为postgres的数据库和一个名为postgres的数据库用户。
+值得注意的是，同时还生成了一个名为postgres的操作系统用户（登录电脑时可以看到）。</p>
+
+<h3 id="2、新增用户和为该用户新增数据库">2、新增用户和为该用户新增数据库</h3>
+
+<p>有两种方式：</p>
+
+<ol>
+<li>进入到postgresql控制台下使用create user xxxuser、create database xxxdb owner xxxuser。</li>
+<li>直接在shell下使用postgres提供的命令createdb/createdb.</li>
+</ol>
+
+<h3 id="3、登录数据库">3、登录数据库</h3>
+
+<p>格式：psql -U xxxuser -d xxxdb -h xxxhost -p xxxport</p>
+
+<ul>
+<li>xxxuser:数据库用户</li>
+<li>xxxdb:指定数据库</li>
+<li>xxxhost:指定ip</li>
+<li>xxxport:指定端口</li>
+</ul>
+
+<p>注意：可以直接psql -U xxxuser，其他均可以不输入，取默认值，此时host为本地，port为5432,数据库为同名数据库，如果不存在该数据则不能登录:</p>
+
+<p>psql -U test_user</p>
+
+<p>Password for user test_user:</p>
+
+<p>psql: FATAL:  database &quot;test_user&quot; does not exist</p>
+
+<h3 id="4、用户和角色关系">4、用户和角色关系</h3>
+
+<p>在postgresql里没有区分用户和角色的概念。&quot;create user&quot;和&quot;create role&quot;几乎完全相同，唯一的区别是：&quot;create user&quot;命令创建的用户默认带有login属性；而&quot;create role&quot;命令创建的用户默认不带login属性。</p>
+
+<p><img src="../images/2014-11-03-role_user.png" alt="create user/role"></p>
+
+<h3 id="5、常用命令">5、常用命令</h3>
+
+<h4 id="5.1-shell命令">5.1 shell命令</h4>
+
+<p><img src="../images/2014-11-03-postgres_shell.png" alt="postgres shell"></p>
+
+<p>用户命令</p>
+
+<ul>
+<li>createdb：创建数据库</li>
+<li>createuser：创建用户</li>
+<li>dropdb：删除数据库</li>
+<li>dropuser：删除用户</li>
+<li>createlang：安装一个过程语言进 PostgreSQL 数据库</li>
+<li>droplang：卸载一个过程语言</li>
+<li>pg_dump：将数据库导出脚本</li>
+<li>pg_dumpall：导出所有数据库</li>
+<li>psql：基于Postgresql交互</li>
+</ul>
+
+<p>系统命令</p>
+
+<ul>
+<li>pg_ctl：启动、停止、重启服务，如pg_ctl start(等于service postgresql start)</li>
+<li>pg_controldata：显示PostgreSQL服务的内部控制信息。</li>
+<li>pg_config：打印当前PostgreSQL配置信息。</li>
+</ul>
+
+<h4 id="5.2-postgresql-控制台命令">5.2 postgresql 控制台命令</h4>
+
+<p><img src="../images/2014-11-03-postgres_console.png" alt="postgres console"></p>
+
+<ul>
+<li>help：查看帮助。</li>
+<li>\copyright：查看版本许可。</li>
+<li>\h：查看SQL命令的解释，比如\h select。</li>
+<li>\?：查看psql命令列表。</li>
+<li>\l：列出所有数据库。</li>
+<li>\c [database_name]：连接其他数据库。</li>
+<li>\d：列出当前数据库的所有表格。</li>
+<li>\d [table_name]：列出某一张表格的结构。</li>
+<li>\du：列出所有用户。</li>
+<li>\e：打开文本编辑器。</li>
+<li>\conninfo：列出当前数据库和连接的信息。</li>
+<li>\password username：修改用户密码。</li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class="well">
+        <h1><a href="/2014/11/%E6%88%91%E7%9A%84mac%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89">2014.11.01 - 我的mac之路（一）</a></h1>
+        
+        <div class="content">
+            <h2 id="初识mac">初识mac</h2>
+
+<p>换了工作后，很意外的是从java转c，由于工作需要，还有老大的体恤，直接给了一台macbook pro，因此正式进入mac的使用模式。用了很多年的windows，中间还夹杂着使用linux（ubuntu、centos、atae、hp、ibm）等系统。没想到使用mac一个月后，不但没有不适应，反而回不去了。apple真是有一个神奇的魔力，让人无法自拔。</p>
+
+<h3 id="重装ox-s">重装OX S</h3>
+
+<p>目前mac采用网络增量升级，如果需要重装全新系统而不是增量升级，我找了很多资料，都没办法。最后，不得已将已有资料全部拷贝，然后将直接使用OSX自带的磁盘工具，将整个磁盘抹去！然后花了一个晚上从app store下载OX S 10.9 mavericks，然后自动安装。</p>
+
+<h3 id="升级oxs-yomesite">升级OXS Yomesite</h3>
+
+<p>在重装OXS 10.9版本一个星期后，yomesite终于发布GM，毫无疑问，升级，该版本最大的特色是图标扁平化。其他的特性，就不做一一介绍。</p>
+
+<h2 id="mac的那些软件">mac的那些软件</h2>
+
+<h3 id="mac的基础软件">mac的基础软件</h3>
+
+<p>首先，从window转到mac的人首要担心的是，windows下的软件能否在mac上也有？经过这些天的工作，目前还未出现window软件有而mac没有的。基本上所有必备软件，mac都完美支持。
+另外关于软件安装，可以采用brew cask安装。</p>
+
+<h3 id="mac的特色软件">mac的特色软件</h3>
+
+<p>（未完待续）</p>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="pagination">
+  
+  <span class="page_number ">Page: 1 of 1</span>
+  
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12 footer navbar-inverse navbar-fixed-bottom">
+            <p class="copyright">&copy;2014 朱玉华博客. Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme by <a href="https://github.com/scotte/jekyll-clean">Scott Emmons.</a>
+            	<!--
+            under
+            <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a>
+			-->
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
