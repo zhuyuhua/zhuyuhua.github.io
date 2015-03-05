@@ -125,4 +125,78 @@ comments: false
  10. Don't Repeat Yourself
  11. 结构化编程。
  
+
 ###第4章 注释
+ 1. 注释不能美化糟糕的代码
+ 2. 用代码来阐述
+ 3. 好的注释：
+
+   	* 法律信息
+   	* 提供信息的注释：比如解释某个抽象反复的返回值。
+   	* 对意图的解释
+   	* 阐释
+   	* 警示：用于警告其他程序员会出现某种后果的注释
+   	* TODO注释
+   	* 放大：用来放大某种看来不合理之物的重要性。
+   	* 公共API中的Javadoc
+	
+ 4. 坏的注释：
+	
+     	* 自言自语：任何迫使读者查看其他模块的注释都不值得称赞。
+     	* 多余的注释
+     	* 误导性注释
+     	* 循规式注释：每个函数都要有javadoc或者每个变量都要有注释的规矩是愚蠢可笑的。
+     	* 日志式注释：每次编辑代码时，在模块开始处添加一条注释，会让模块变得凌乱不堪。
+     	* 废话注释
+     	* 可怕的废话
+     		
+     	/** The name. */
+     	private String name;
+     	
+     	/** The version. */
+     	private String version;
+     	
+     	* 能用函数或者变量时就别用注释
+     	* 位置标记，如在源代码中标记：
+     	// Actions ///////////////////////////
+     	* 括号后面的注释
+     	
+     	public class WC {
+     
+     		private static Logger logger = LoggerFactory.getLogger(WC.class);
+     	
+     		public static void main(String[] args) {
+     			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+     			
+     			String line ;
+     			int lineCount = 0;
+     			int charCount = 0;
+     			int wordCount = 0;
+     			try {
+     				while ((line = in.readLine())!= null) {
+     					lineCount++;
+     					charCount += line.length();
+     					String words[] = line.split("\\W");
+     					wordCount += words.length;
+     				}///while
+     				
+     				System.out.println(wordCount);
+     				System.out.println(lineCount);
+     				System.out.println(charCount);
+     			} //try
+     			catch (Exception e) {
+     				// TODO: handle exception
+     			}//catch
+     		}//main
+     	}
+     	
+     	* 归属与署名，这类信息最好用源代码控制系统
+     	/** Add by zhu */
+     	
+     	* 注释掉的代码
+     	* HTML注释
+     	* 非本地信息：注释要和描述的代码离得最近。
+     	* 信息过多
+     	* 不明显的联系
+     	* 函数头
+     	* 范例
