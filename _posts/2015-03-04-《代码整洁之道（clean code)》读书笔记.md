@@ -142,61 +142,68 @@ comments: false
 	
  4. 坏的注释：
 	
-     	* 自言自语：任何迫使读者查看其他模块的注释都不值得称赞。
-     	* 多余的注释
-     	* 误导性注释
-     	* 循规式注释：每个函数都要有javadoc或者每个变量都要有注释的规矩是愚蠢可笑的。
-     	* 日志式注释：每次编辑代码时，在模块开始处添加一条注释，会让模块变得凌乱不堪。
-     	* 废话注释
-     	* 可怕的废话
+     * 自言自语：任何迫使读者查看其他模块的注释都不值得称赞。
+     * 多余的注释
+     * 误导性注释
+     * 循规式注释：每个函数都要有javadoc或者每个变量都要有注释的规矩是愚蠢可笑的。
+     * 日志式注释：每次编辑代码时，在模块开始处添加一条注释，会让模块变得凌乱不堪。
+     * 废话注释
+     * 可怕的废话
      		
      	/** The name. */
+
      	private String name;
      	
      	/** The version. */
+
      	private String version;
      	
-     	* 能用函数或者变量时就别用注释
-     	* 位置标记，如在源代码中标记：
+     * 能用函数或者变量时就别用注释
+     * 位置标记，如在源代码中标记：
      	// Actions ///////////////////////////
-     	* 括号后面的注释
+     * 括号后面的注释
      	
-     	public class WC {
+     		public class WC {
      
-     		private static Logger logger = LoggerFactory.getLogger(WC.class);
+	     		private static Logger logger = LoggerFactory.getLogger(WC.class);
+	     	
+	     		public static void main(String[] args) {
+	     			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	     			
+	     			String line ;
+	     			int lineCount = 0;
+	     			int charCount = 0;
+	     			int wordCount = 0;
+	     			try {
+	     				while ((line = in.readLine())!= null) {
+	     					lineCount++;
+	     					charCount += line.length();
+	     					String words[] = line.split("\\W");
+	     					wordCount += words.length;
+	     				}///while
+	     				
+	     				System.out.println(wordCount);
+	     				System.out.println(lineCount);
+	     				System.out.println(charCount);
+	     			} //try
+	     			catch (Exception e) {
+	     				// TODO: handle exception
+	     			}//catch
+	     		}//main
+     		}
      	
-     		public static void main(String[] args) {
-     			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-     			
-     			String line ;
-     			int lineCount = 0;
-     			int charCount = 0;
-     			int wordCount = 0;
-     			try {
-     				while ((line = in.readLine())!= null) {
-     					lineCount++;
-     					charCount += line.length();
-     					String words[] = line.split("\\W");
-     					wordCount += words.length;
-     				}///while
-     				
-     				System.out.println(wordCount);
-     				System.out.println(lineCount);
-     				System.out.println(charCount);
-     			} //try
-     			catch (Exception e) {
-     				// TODO: handle exception
-     			}//catch
-     		}//main
-     	}
+     * 归属与署名，这类信息最好用源代码控制系统
      	
-     	* 归属与署名，这类信息最好用源代码控制系统
-     	/** Add by zhu */
+		/** Add by zhu */
      	
-     	* 注释掉的代码
-     	* HTML注释
-     	* 非本地信息：注释要和描述的代码离得最近。
-     	* 信息过多
-     	* 不明显的联系
-     	* 函数头
-     	* 范例
+     * 注释掉的代码
+     * HTML注释
+     * 非本地信息：注释要和描述的代码离得最近。
+     * 信息过多
+     * 不明显的联系
+     * 函数头
+     * 范例
+
+
+
+###第8章 边界
