@@ -1,18 +1,10 @@
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12 footer navbar-inverse navbar-fixed-bottom">
-            <p class="copyright">&copy;{{ site.time | date: '%Y' }} {{ site.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme by <a href="https://github.com/scotte/jekyll-clean">Scott Emmons.</a>
-            	<!--
-            under
-            <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a>
-			-->
-            </p>
+    <footer  class="footnote footnote-tiffany">
+        <div class="container">
+                <a class="foot-item" href="mailto:{{ site.email }}" target="_blank"><span class="octicon octicon-mail"></span></a>
+                <a class="foot-item" href="https://github.com/{{ site.github_username }}" target="_blank"><span class="octicon octicon-mark-github"></span></a>
+                <a class="foot-item" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" target="_blank"><span class="octicon octicon-rss"></span></a>
+                <a class="foot-item" href="{{ '/link/' | prepend: site.baseurl | prepend: site.url }}"><span class="octicon octicon-link-external"></span></a>
+                &nbsp;
+                <a href="http://blog.rainyalley.com/"><span class="word-keep">&copy; RainyAlley</span></a>
         </div>
-    </div>
-</div>
-
-{% include disqus-counts.html %}
-{% include analytics.html %}
-
-</body>
-</html>
+    </footer>

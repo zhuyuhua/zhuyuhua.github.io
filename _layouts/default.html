@@ -1,13 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+<div class="main">
+
 {% include header.html %}
 
-<div class="container container-left">
-    <div class="row">
-        <div class="col-md-3 hidden-xs">
-            {% include sidebar.html %}
-        </div>
-        <div class="col-md-9">
-            {{ content }}
-        </div>
+    <div class="container">
+        {{ content }}
+    </div>
+
+    <div class="page-scrollTop" data-toggle="tooltip" data-placement="top" title="Top">
+        <a href="javascript:void(0);">
+            <div class="arrow"></div>
+            <div class="stick"></div>
+        </a>
     </div>
 </div>
+
 {% include footer.html %}
+
+{% include script.html %}
+
+</body>
+</html>

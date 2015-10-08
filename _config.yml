@@ -1,35 +1,44 @@
-# Jekyll configuration
-
-name: 朱玉华的技术博客
-description: 欢迎来到我的技术博客！
-
-# url is currently only used only for the RSS feed in feed.xml
-url: http://scotte.github.io
-
-# baseurl will often be '', but for a project page on gh-pages, it needs to
-# be the project name.
-# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
-#     run it like so: jekyll serve --baseurl=''
-baseurl:
-
-# This can be '' to hide the Github nav button
-github: 'zhuyuhua/zhuyuhua.github.io'
-
-# Set this to your UA-# value, or '' to disable the block completely
-gaaccount: ''
-
-# Set this to your disqus shortname to enable comments. Note that the 'comments'
-# setting below must also be true. Individual posts can override 'comments' to
-# disable on a post-by-post basis
-disqus: ''
-comments: true
-
-permalink: /:year/:month/:title
-paginate: 5
+permalink: /:year-:month-:day/:title/
 
 highlighter: pygments
 markdown: redcarpet
 redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+  extensions: [
+   "no_intra_emphasis"
+   ,"fenced_code_blocks"
+   ,"autolink"
+   ,"tables"
+   ,"strikethrough"
+   ,"superscript"
+   ,"with_toc_data"
+   ,"footnotes"
+   ,"highlight"
+   ,"underline"
+   ,"quote"
+   ,"lax_spacing"
+   ,"prettify"
+#   ,"html_toc"
+  ]
 
-exclude: ['README.md', 'LICENSE']
+
+
+paginate: 10
+paginate_path: ":num"
+baseurl: ""
+
+
+
+title: "RainyAlley"
+email: "dubuyuye@yeah.net"
+description: "Developer"
+github_username:  "dubuyuye"
+swiftype_searchId: "ncwR9a8S9CTx2q9SgsJm"
+disqus_shortname: "rainyalley"
+
+
+
+url: "http://blog.rainyalley.com"
+imgrepo: "http://blog.rainyalley.com/static/img"
+#url: "http://127.0.0.1:4000"
+#imgrepo: "http://127.0.0.1:4000/static/img"
+
