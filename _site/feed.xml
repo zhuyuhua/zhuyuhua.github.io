@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>朱玉华博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">朱玉华博客</a>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">主页</a></li>
+                    <li class="active"><a href="/archive.html">文档列表</a></li>
+                    <!--
+                    <li class="active visible-xs-block"><a href="/links.html">链接</a></li>
+                    
+                    
+                    <li class="active"><a href="/about.html">关于我</a></li>
+                    
+                    <li class="active"><a href="/feed.xml">RSS</a></li>
+                   
+                    
+                      <li class="active"><a href="https://github.com/zhuyuhua/zhuyuhua.github.io" target="_blank">Github</a></li>
+                    
+                     -->
+                </ul>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container container-left">
+    <div class="row">
+        <div class="col-md-3 hidden-xs">
+            <div class="sidebar well">
+持之以恒！
+</div>
+
+<div class="sidebar well">
+    <h1>最近更新</h1>
+    <ul>
+        
+          <li><a href="/2014/11/PostgreSQL%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA">PostgreSQL入门指导</a></li>
+        
+          <li><a href="/2014/11/%E6%88%91%E7%9A%84mac%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89">我的mac之路（一）</a></li>
+        
+    </ul>
+</div>
+
+<div class="sidebar well">
+<h1>链接</h1>
+<ul>
+  <li><a href="https://github.com" target="_blank">GitHub</a></li>
+  <li><a href="https://stackoverflow.com" target="_blank">StackOverFlow</a></li>
+  <li><a href="http://www.codeguru.com" target="_blank">CodeGuru</a></li>
+  <li><a href="http://www.codeproject.com" target="_blank">CodeProject</a></li>
+</ul>
+
+</div>
+
+<div class="sidebar well">
+
+<h1>关于我</h1>
+<p>这是朱玉华的个人博客<br/>您可以从
+	<a href="https://github.com/zhuyuhua/zhuyuhua.github.io">这里</a>找到博客的所有内容。</p>
+<p>联系方式：</p>
+<ul>
+	<li><a href="http://weibo.com/534526520" target="_blank">我的微博</a></li>
+	<li><a href="https://github.com/zhuyuhua/" target="_blank">github</a></li>
+</ul>
+
+</div>
+
+        </div>
+        <div class="col-md-9">
+            <?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>朱玉华博客</title>
+		<description>持之以恒！</description>
+		<link>http://scotte.github.io</link>
+		<atom:link href="http://scotte.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>PostgreSQL入门指导</title>
+				<description>&lt;h3 id=&quot;1、安装&quot;&gt;1、安装&lt;/h3&gt;
+
+&lt;p&gt;针对mac，&lt;a href=&quot;http://www.postgresql.org/download/macosx/&quot;&gt;官网&lt;/a&gt;提供了4种方法：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Graphical install:即下载&lt;a href=&quot;http://www.enterprisedb.com/products-services-training/pgdownload&quot;&gt;zip包&lt;/a&gt;，里面是postgresql-xxx(版本)-3-osx.app。&lt;/li&gt;
+&lt;li&gt;Postgres.app：&lt;a href=&quot;http://postgresapp.com&quot;&gt;下载地址&lt;/a&gt;。步骤和第一步类似。&lt;/li&gt;
+&lt;li&gt;使用Fink安装（没试过）&lt;/li&gt;
+&lt;li&gt;使用MacPort安装（没试过）&lt;/li&gt;
+&lt;li&gt;使用Homebrew安装：&amp;gt;&amp;gt;brew install postgresql。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;安装完成后，postgresql会默认生成一个名为postgres的数据库和一个名为postgres的数据库用户。
+值得注意的是，同时还生成了一个名为postgres的操作系统用户（登录电脑时可以看到）。&lt;/p&gt;
+
+&lt;h3 id=&quot;2、新增用户和为该用户新增数据库&quot;&gt;2、新增用户和为该用户新增数据库&lt;/h3&gt;
+
+&lt;p&gt;有两种方式：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;进入到postgresql控制台下使用create user xxxuser、create database xxxdb owner xxxuser。&lt;/li&gt;
+&lt;li&gt;直接在shell下使用postgres提供的命令createdb/createdb.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;3、登录数据库&quot;&gt;3、登录数据库&lt;/h3&gt;
+
+&lt;p&gt;格式：psql -U xxxuser -d xxxdb -h xxxhost -p xxxport&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;xxxuser:数据库用户&lt;/li&gt;
+&lt;li&gt;xxxdb:指定数据库&lt;/li&gt;
+&lt;li&gt;xxxhost:指定ip&lt;/li&gt;
+&lt;li&gt;xxxport:指定端口&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注意：可以直接psql -U xxxuser，其他均可以不输入，取默认值，此时host为本地，port为5432,数据库为同名数据库，如果不存在该数据则不能登录:&lt;/p&gt;
+
+&lt;p&gt;psql -U test_user&lt;/p&gt;
+
+&lt;p&gt;Password for user test_user:&lt;/p&gt;
+
+&lt;p&gt;psql: FATAL:  database &amp;quot;test_user&amp;quot; does not exist&lt;/p&gt;
+
+&lt;h3 id=&quot;4、用户和角色关系&quot;&gt;4、用户和角色关系&lt;/h3&gt;
+
+&lt;p&gt;在postgresql里没有区分用户和角色的概念。&amp;quot;create user&amp;quot;和&amp;quot;create role&amp;quot;几乎完全相同，唯一的区别是：&amp;quot;create user&amp;quot;命令创建的用户默认带有login属性；而&amp;quot;create role&amp;quot;命令创建的用户默认不带login属性。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2014-11-03-role_user.png&quot; alt=&quot;create user/role&quot;&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5、常用命令&quot;&gt;5、常用命令&lt;/h3&gt;
+
+&lt;h4 id=&quot;5.1-shell命令&quot;&gt;5.1 shell命令&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2014-11-03-postgres_shell.png&quot; alt=&quot;postgres shell&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;用户命令&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;createdb：创建数据库&lt;/li&gt;
+&lt;li&gt;createuser：创建用户&lt;/li&gt;
+&lt;li&gt;dropdb：删除数据库&lt;/li&gt;
+&lt;li&gt;dropuser：删除用户&lt;/li&gt;
+&lt;li&gt;createlang：安装一个过程语言进 PostgreSQL 数据库&lt;/li&gt;
+&lt;li&gt;droplang：卸载一个过程语言&lt;/li&gt;
+&lt;li&gt;pg_dump：将数据库导出脚本&lt;/li&gt;
+&lt;li&gt;pg_dumpall：导出所有数据库&lt;/li&gt;
+&lt;li&gt;psql：基于Postgresql交互&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;系统命令&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pg_ctl：启动、停止、重启服务，如pg_ctl start(等于service postgresql start)&lt;/li&gt;
+&lt;li&gt;pg_controldata：显示PostgreSQL服务的内部控制信息。&lt;/li&gt;
+&lt;li&gt;pg_config：打印当前PostgreSQL配置信息。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;5.2-postgresql-控制台命令&quot;&gt;5.2 postgresql 控制台命令&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2014-11-03-postgres_console.png&quot; alt=&quot;postgres console&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;help：查看帮助。&lt;/li&gt;
+&lt;li&gt;\copyright：查看版本许可。&lt;/li&gt;
+&lt;li&gt;\h：查看SQL命令的解释，比如\h select。&lt;/li&gt;
+&lt;li&gt;\?：查看psql命令列表。&lt;/li&gt;
+&lt;li&gt;\l：列出所有数据库。&lt;/li&gt;
+&lt;li&gt;\c [database_name]：连接其他数据库。&lt;/li&gt;
+&lt;li&gt;\d：列出当前数据库的所有表格。&lt;/li&gt;
+&lt;li&gt;\d [table_name]：列出某一张表格的结构。&lt;/li&gt;
+&lt;li&gt;\du：列出所有用户。&lt;/li&gt;
+&lt;li&gt;\e：打开文本编辑器。&lt;/li&gt;
+&lt;li&gt;\conninfo：列出当前数据库和连接的信息。&lt;/li&gt;
+&lt;li&gt;\password username：修改用户密码。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Tue, 04 Nov 2014 05:00:00 +0800</pubDate>
+				<link>http://scotte.github.io/2014/11/PostgreSQL%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA</link>
+				<guid isPermaLink="true">http://scotte.github.io/2014/11/PostgreSQL%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA</guid>
+			</item>
+		
+			<item>
+				<title>我的mac之路（一）</title>
+				<description>&lt;h2 id=&quot;初识mac&quot;&gt;初识mac&lt;/h2&gt;
+
+&lt;p&gt;换了工作后，很意外的是从java转c，由于工作需要，还有老大的体恤，直接给了一台macbook pro，因此正式进入mac的使用模式。用了很多年的windows，中间还夹杂着使用linux（ubuntu、centos、atae、hp、ibm）等系统。没想到使用mac一个月后，不但没有不适应，反而回不去了。apple真是有一个神奇的魔力，让人无法自拔。&lt;/p&gt;
+
+&lt;h3 id=&quot;重装ox-s&quot;&gt;重装OX S&lt;/h3&gt;
+
+&lt;p&gt;目前mac采用网络增量升级，如果需要重装全新系统而不是增量升级，我找了很多资料，都没办法。最后，不得已将已有资料全部拷贝，然后将直接使用OSX自带的磁盘工具，将整个磁盘抹去！然后花了一个晚上从app store下载OX S 10.9 mavericks，然后自动安装。&lt;/p&gt;
+
+&lt;h3 id=&quot;升级oxs-yomesite&quot;&gt;升级OXS Yomesite&lt;/h3&gt;
+
+&lt;p&gt;在重装OXS 10.9版本一个星期后，yomesite终于发布GM，毫无疑问，升级，该版本最大的特色是图标扁平化。其他的特性，就不做一一介绍。&lt;/p&gt;
+
+&lt;h2 id=&quot;mac的那些软件&quot;&gt;mac的那些软件&lt;/h2&gt;
+
+&lt;h3 id=&quot;mac的基础软件&quot;&gt;mac的基础软件&lt;/h3&gt;
+
+&lt;p&gt;首先，从window转到mac的人首要担心的是，windows下的软件能否在mac上也有？经过这些天的工作，目前还未出现window软件有而mac没有的。基本上所有必备软件，mac都完美支持。
+另外关于软件安装，可以采用brew cask安装。&lt;/p&gt;
+
+&lt;h3 id=&quot;mac的特色软件&quot;&gt;mac的特色软件&lt;/h3&gt;
+
+&lt;p&gt;（未完待续）&lt;/p&gt;
+</description>
+				<pubDate>Sat, 01 Nov 2014 09:00:00 +0800</pubDate>
+				<link>http://scotte.github.io/2014/11/%E6%88%91%E7%9A%84mac%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89</link>
+				<guid isPermaLink="true">http://scotte.github.io/2014/11/%E6%88%91%E7%9A%84mac%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89</guid>
+			</item>
+		
+	</channel>
+</rss>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12 footer navbar-inverse navbar-fixed-bottom">
+            <p class="copyright">&copy;2014 朱玉华博客. Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme by <a href="https://github.com/scotte/jekyll-clean">Scott Emmons.</a>
+            	<!--
+            under
+            <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a>
+			-->
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
